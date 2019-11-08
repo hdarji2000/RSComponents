@@ -15,13 +15,12 @@ import org.openqa.selenium.support.ui.Select;
 
 import static junit.framework.TestCase.assertEquals;
 
-public class Registrations {
-    WebDriver driver;
+public class Registrations extends driverClass {
+
 
     @Given("^I enter url as \"([^\"]*)\"$")
     public void iEnterUrlAs(String url)  {
-        FirefoxDriverManager.getInstance().setup();
-        driver = new FirefoxDriver();
+
         driver.get(url);
         driver.manage().window().maximize();
     }
@@ -91,6 +90,7 @@ public class Registrations {
 
     @And("^I click on By email box$")
     public void iClickOnByEmailBox() {
+
         driver.findElement(By.id("marketingEmail")).click();
     }
     @And("^I click Register button on Registration page$")
@@ -116,6 +116,7 @@ public class Registrations {
 
     @When("^I click Login button$")
     public void iClickLoginButton() {
+
         driver.findElement(By.id("js-logInOut")).click();
     }
 
@@ -144,7 +145,8 @@ public class Registrations {
     }
 
     @And("^I click on Add to Basket$")
-    public void iClickOnAddToBasket() {
+    public void iClickOnAddToBasket()
+    {
         driver.findElement(By.cssSelector(".btn-primary-red")).click();
     }
 
